@@ -20,7 +20,27 @@ export function renderHabits(habits, onToggle, onDelete){
   habits.forEach(habit => {
     const habitItem = document.createElement("li");
     habitItem.className = "habit-item";
+    habitItem.innerHTML = `
+      <input type="checkbox" id="habit-${habit.id}">
+      <label for="habit-${habit.id}">${habit.name}</label>
+      <button class="delete-habit">Delete</button>
+    `;
+    habitList.appendChild(habitItem);
   });
 }
 
+// add event listeners to the habit item elements for toggling and deleting habits
+
+export function addHabitEventListeners(habitItem, habitId, onToggle, onDelete) {
+  const checkbox = habitItem.querySelector("input[type='checkbox']");
+  const deleteButton = habitItem.querySelector(".delete-habit");
+  
+  checkbox.addEventListener("change", () => {
+    onToggle(habitId);
+  });
+
+  deleteButton.addEventListener("click", () => {
+    onDelete(habitId);
+  });
+}
 
