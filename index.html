@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <header>
+        <h1 id="welcome-msg">Welcome back, User!</h1>
+        <div id="clock" class="clock">00:00:00</div>
+      </header>
+
+      <main>
+        <section class="card quote-section">
+          <h3>Daily Motivation</h3>
+          <p id="quote-text">"Loading quote..."</p>
+          <small id="quote-author"></small>
+          <button id="refresh-quote">New Quote</button>
+        </section>
+
+        <section class="card task-section">
+          <h3>Tasks</h3>
+          <div class="task-input">
+            <input
+              type="text"
+              id="task-input"
+              placeholder="Add a new task..."
+            />
+            <button id="add-task">Add</button>
+          </div>
+          <ul id="task-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
